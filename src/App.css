@@ -49,6 +49,10 @@
 .text_p {
     font-size: 12px !important;
 }
+.text-13 {
+    font-size: 13.5px !important;
+    font-weight: 400 !important;
+}
 .mt-none {
     margin-top: -17px;
 }
@@ -66,6 +70,12 @@
     width: 100%;
     color: red;
     font-weight: 500;
+}
+.border-r {
+    border-right: solid 1px lightgrey ;
+}
+.text-14 {
+    font-size: 14px !important;
 }
 @media only screen and (max-width: 768px) {
     .main{
@@ -85,6 +95,12 @@
     }
     .margin {
         margin-left: 20px;
+    }
+    .border-r {
+        border-right: none;
+        border-bottom: solid 1px #78bb4b ;
+        box-shadow: 0px 5px 5px -5px #333;
+        border-radius: 4px;
     }
 }
 
