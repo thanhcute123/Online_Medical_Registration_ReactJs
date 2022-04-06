@@ -1,10 +1,13 @@
-import React from "react";
-import {serviceFree} from "../../../Data/Data";
+import React, { useContext } from "react";
+import { vi, en } from "../../../Data/Data";
+import { Page } from "../../../Store/ClickContext";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../../../App.css';
 
 const FormSelectFree = ({formData, setFormData}) => {
-
+    const context = useContext(Page);
+    let type;
+    context.translate === 0 ? type = vi : type = en;
     const handleChangeOption = (e) => {
         setFormData({...formData, optionSelected: e.target.value})
     }
@@ -15,8 +18,8 @@ const FormSelectFree = ({formData, setFormData}) => {
                 <div className="form-group">
                     <select value={formData.optionSelected} onChange={handleChangeOption} name="serviceFree"
                             className="form-control text-button" id="exampleFormControlSelect1">
-                        <option>Chọn dịch vụ khám</option>
-                        {serviceFree.map(otp => (
+                        <option>{type.form.default_option}</option>
+                        {type.form.form_1.serviceFree_option.map(otp => (
                                 <optgroup key={otp.id} label={otp.name}>
                                     {
                                         otp.type.map(values => (

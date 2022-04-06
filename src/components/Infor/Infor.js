@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
+import { vi, en } from "../Data/Data";
+import {Page} from "../Store/ClickContext";
 import '../../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Infor = () => {
+    const context = useContext(Page);
+    let type;
+    context.translate === 0 ? type = vi : type = en;
     return (
         <div>
             <div className="bgg w-100 d-flex justify-content-center align-items-center text-center">
                 <blockquote className="blockquote ">
-                    <p className="mb-0 font-weight-bold color">Đăng ký khám chữa bệnh trực tuyến</p>
-                    <small className="text-muted">Bệnh nhân được thăm khám trực tuyến với đội ngũ bác sĩ chuyên khoa
-                        giỏi đang làm việc tại các bệnh viện lớn</small>
+                    <p className="mb-0 font-weight-bold color">{type.info.title}</p>
+                    <small className="text-muted">{type.info.sub_title}</small>
                 </blockquote>
             </div>
 

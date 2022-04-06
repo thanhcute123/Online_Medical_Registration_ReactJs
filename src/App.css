@@ -77,6 +77,13 @@
 .text-14 {
     font-size: 14px !important;
 }
+.mr-none {
+    margin-right: -20px;
+    margin-left: 10px;
+}
+.mt-10 {
+    margin-top: -10px;
+}
 @media only screen and (max-width: 768px) {
     .main{
         width: 95%;

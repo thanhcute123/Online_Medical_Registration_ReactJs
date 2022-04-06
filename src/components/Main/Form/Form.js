@@ -3,20 +3,22 @@ import {useState, useContext} from "react";
 import FormSelect from "./FormSelect/FormSelect";
 import FormSelectFree from "./FormSelectFree/FormSelectFree";
 import {Page} from "../../Store/ClickContext";
-import {date, timeRow2} from "../../Data/Data";
-import {time} from "../../Data/Data";
+import {date, timeRow2, vi, en, time } from "../../Data/Data";
+// import {time} from "../../Data/Data";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../../App.css';
 
 
 const Form = ({formData, setFormData}) => {
     const context = useContext(Page);
+    let type;
+    context.translate === 0 ? type = vi : type = en;
 
     const [timeError, setTimeError] = useState('');
     const [idError, setIdError] = useState('');
     const [symptomError, setSymptomError] = useState('');
     const [dateError, setDateError] = useState('');
-    const [selectOptionError, setSelectOptionError] = useState('');
+    // const [selectOptionError, setSelectOptionError] = useState('');
     const classActive = 'col-sm-12 col-lg-6 col-md-12 bg-color-active bt p-2 text-button text-white';
     const classNonActive = 'col-sm-12 col-lg-6 col-md-12 bt bg-color p-2 text-button';
     const classButtonActive = 'col-lg-2 col-md-4 col-sm-3 rounded bt bg-color-active text-white text-button p-2 ml-2';
@@ -70,11 +72,11 @@ const Form = ({formData, setFormData}) => {
             if (formData.input !== '') {
 
             } else {
-                setDateError('Vui lòng chọn ngày đăng ký khám!');
+                context.translate === 0 ? setDateError( 'Vui lòng chọn ngày đăng ký khám!') : setDateError('Please select your registration date!');
             }
 
             if (checkButtonClicked(formData.toggleArray) === true && checkButtonClicked(formData.toggleArrayRow2) === true) {
-                setTimeError('Vui lòng chọn thời gian đăng ký khám!');
+                context.translate === 0 ? setTimeError('Vui lòng chọn thời gian đăng ký khám!') : setTimeError('Please choose a time to register!');
             } else {
                 setTimeError('');
             }
@@ -82,13 +84,13 @@ const Form = ({formData, setFormData}) => {
             if (formData.validInputId !== '') {
 
             } else {
-                setIdError('Vui lòng nhập mã số bệnh nhân!');
+               context.translate === 0 ? setIdError('Vui lòng nhập mã bệnh nhân!') : setIdError('Please enter patient code!');
             }
 
             if (formData.validInputSymptom !== '') {
 
             } else {
-                setSymptomError('Vui lòng nhập triệu chứng, lý do khám!');
+                context.translate === 0 ? setSymptomError('Vui lòng nhập triệu chứng lý do khám!') : setSymptomError('Please enter symptoms, reason for examination!');
             }
 
 
@@ -141,31 +143,30 @@ const Form = ({formData, setFormData}) => {
 
         console.log(formData);
     }
-
+    console.log(type.form.warning_right)
     return (
 
         <div className="shadow-sm d-flex justify-content-center flex-column w-100 pb-5">
             <div className="d-flex justify-content-center mt-3 w-100">
                 <div className="w-95 bg_color_1">
-                    <p className="font_announce m-2 text-success p-1">Các trường đánh dấu <span
-                        className="text-danger">*</span> là các trường bắt buộc nhập. Thông tin bệnh nhân, thông
-                        tin đăng ký khám cần nhập chính xác</p>
+                    <p className="font_announce m-2 text-success p-1">{type.form.warning_left} <span
+                        className="text-danger">{type.form.star}</span>{type.form.warning_right}</p>
                 </div>
             </div>
             <div className="d-flex justify-content-center align-items-center mt-3">
-                <p className="font_title">THÔNG TIN ĐĂNG KÝ KHÁM</p>
+                <p className="font_title">{type.form.form_1.form_title}</p>
             </div>
             <div className="w-100 mt-none">
-                <p className="ml-3 text-14">Loại dịch vụ <span className="text-danger">*</span></p>
+                <p className="ml-3 text-14">{type.form.form_1.service}<span className="text-danger">{type.form.star}</span></p>
                 <div className="d-flex justify-content-center align-items-center w-100">
                     <div className="w-95 row">
-                        <input type="button" value="Dịch vụ có thu phí" onClick={(e) => {
+                        <input type="button" value={type.form.form_1.paid_service} onClick={(e) => {
                             changeService(0);
                             changeValueService(e)
                         }}
                                className={formData.service === 0 ? classActive : classNonActive}/>
 
-                        <input type="button" value="Tư vấn miễn phí" onClick={(e) => {
+                        <input type="button" value={type.form.form_1.free_service} onClick={(e) => {
                             changeService(1);
                             changeValueService(e)
                         }}
@@ -178,7 +179,7 @@ const Form = ({formData, setFormData}) => {
             <div className="row sub_form mt-2">
                 <div className="col-sm-12 col-lg-6 col-md-12">
                     <div className="w-95 ml-3">
-                        <p className="text-14">Dịch vụ khám <span className="text-danger">*</span></p>
+                        <p className="text-14">{type.form.form_1.examination_service}<span className="text-danger">{type.form.star}</span></p>
                         {
                             formData.service === 0 ? <FormSelect formData={formData} setFormData={setFormData}/> :
                                 <FormSelectFree formData={formData} setFormData={setFormData}/>
@@ -187,7 +188,7 @@ const Form = ({formData, setFormData}) => {
                 </div>
                 <div className="col-sm-12 col-lg-6 col-md-12">
                     <div className="w-95">
-                        <p className="margin text-14">Ngày đăng ký khám <span className="text-danger">*</span></p>
+                        <p className="margin text-14">{type.form.form_1.examination_date}<span className="text-danger">{type.form.star}</span></p>
                         <div className="d-flex justify-content-center align-items-center w-100 margin">
                             <form className="w-100">
                                 <div className="form-group">
@@ -204,7 +205,7 @@ const Form = ({formData, setFormData}) => {
             <div className="sub_form row">
                 <div className="col-sm-12 col-lg-6 col-md-12">
                     <div className="w-95 ml-3">
-                        <p className="text-14">Thời gian đăng ký khám <span className="text-danger">*</span></p>
+                        <p className="text-14">{type.form.form_1.examination_time}<span className="text-danger">*</span></p>
                         <div className="d-flex justify-content-center align-items-center w-100">
                             <form className="w-100" onSubmit={handleSubmitButton}>
 
@@ -212,7 +213,7 @@ const Form = ({formData, setFormData}) => {
                                     {
                                         getStatus(formData.input) === -1 ? <div
                                                 className="form-control text-button bg-color border-success text-center">
-                                                Chọn ngày đăng ký khám
+                                            {type.form.form_1.select_date}
                                             </div> :
                                             getStatus(formData.input) === 1 ?
                                                 <>
@@ -245,8 +246,7 @@ const Form = ({formData, setFormData}) => {
                                                             <div className="error-msg">{timeError}</div>}
                                                     </div>
                                                 </> :
-                                                <p className="form-control text-button text-button bg-red text-center text-white">Chưa
-                                                    có lịch khám vào ngày đã chọn</p>
+                                                <p className="form-control text-button text-button bg-red text-center text-white">{type.form.form_1.non_date}</p>
                                     }
                                 </div>
                             </form>
@@ -255,13 +255,13 @@ const Form = ({formData, setFormData}) => {
                 </div>
                 <div className="col-sm-12 col-lg-6 col-md-12">
                     <div className="w-95">
-                        <p className="margin text-14">Nhập mã số bệnh nhân <span className="text-danger">*</span></p>
+                        <p className="margin text-14">{type.form.form_1.id_person}<span className="text-danger">*</span></p>
                         <div className="d-flex justify-content-center align-items-center w-100 margin">
                             <form className="w-100">
                                 <div className="form-group">
                                     <input value={formData.validInputId} onChange={handleIdChange}
                                            className="form-control text-button" type="text"
-                                           placeholder="Nhập mã số bệnh nhân"/>
+                                           placeholder={type.form.form_1.placeholder_id_patient}/>
                                     {idError && <div className="error-msg">{idError}</div>}
                                 </div>
                             </form>
@@ -270,13 +270,13 @@ const Form = ({formData, setFormData}) => {
                 </div>
             </div>
             <div className="w-100 mt-none ml-3 mt-2">
-                <p className="text-14">Mô tả <span className="text-danger">*</span></p>
+                <p className="text-14">{type.form.form_1.description}<span className="text-danger">*</span></p>
                 <div className="d-flex justify-content-center align-items-center w-95">
                     <form className="w-100">
                         <div className="form-group">
                                     <textarea value={formData.validInputSymptom} onChange={handleSymptomChange}
                                               className="form-control text-button" id="exampleFormControlTextarea1"
-                                              rows="2" placeholder="Nhập triệu chứng, lý do khám"></textarea>
+                                              rows="2" placeholder={type.form.form_1.placeholder_description}></textarea>
                             {symptomError && <div className="error-msg">{symptomError}</div>}
                         </div>
                     </form>
@@ -284,11 +284,11 @@ const Form = ({formData, setFormData}) => {
             </div>
             <div className="row justify-content-center main mt-4">
                 <button className="col-sm-4 bg-color btn p-2 text-button border-success bt mr-2 margin">
-                    Đính kèm tài liệu
+                    {type.form.form_1.button_attach_documents}
                 </button>
                 <button onClick={handleFormSubmit}
                         className="col-sm-4 btn bg-color-active p-2 text-button bt margin text-white">
-                    Tiếp theo
+                    {type.form.form_1.button_continue}
                 </button>
             </div>
 
