@@ -13,8 +13,8 @@ const Header = () => {
     const context = useContext(Page);
     let type;
     context.translate === 0 ? type = vi : type = en;
-    const classNonActiveLanguage = "mr-1 border border-light cursor";
-    const classActiveLanguage = "mr-1 cursor";
+    const classNonActiveLanguage = "mr-1 cursor";
+    const classActiveLanguage = "mr-1 border_bottom pb-1 cursor";
     const vi_translate = () => {
         context.vi_page();
     }
@@ -30,11 +30,17 @@ const Header = () => {
                 <img className="img-fluid" width="149px" height="36.5px" src={logo}/>
                 <div className="d-flex">
                     <p><FontAwesomeIcon icon={faCircleUser} />{type.header.cskh}</p>
-                    <div className="language ml-3 ">
-                        <form onSubmit={handleSubmitButton}>
-                                <img className={context.translate === 0 ? classActiveLanguage : classNonActiveLanguage} width="18px" height="18px" src={icon_vn} onClick={vi_translate}/>
+                    <div className="language ml-3">
+                        <form onSubmit={handleSubmitButton} className="d-flex">
+                            <div className={context.translate === 0 ? classActiveLanguage : classNonActiveLanguage}>
+                                <img width="18px" height="18px" src={icon_vn} onClick={vi_translate}/>
+                            </div>
+                            <div className={context.translate === 1 ? classActiveLanguage : classNonActiveLanguage}>
+                                <img  width="18px" height="18px" src={icon_us} onClick={en_translate}/>
+                            </div>
 
-                                <img className={context.translate === 1 ? classActiveLanguage : classNonActiveLanguage} width="18px" height="18px" src={icon_us} onClick={en_translate}/>
+
+
 
                         </form>
                     </div>

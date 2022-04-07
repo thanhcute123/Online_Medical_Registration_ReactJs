@@ -1,10 +1,16 @@
 .bgg {
-    background-image: url("img/output-onlinepngtools.png");
+    background-image: url("img/v870-tang-36.jpg");
     height: 200px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    /*filter: blur(1px);*/
+    /*-webkit-filter: blur(1px);*/
 
+}
+.text {
+    color: #0a0a2a;
+    /*font-weight: 500;*/
 }
 .color {
     font-family: 'Roboto', sans-serif;
@@ -86,6 +92,10 @@
 }
 .cursor {
     cursor: pointer;
+}
+.border_bottom {
+    border-bottom: 2px solid #78bb4b;
+    border-radius: 2px 2px;
 }
 @media only screen and (max-width: 768px) {
     .main{

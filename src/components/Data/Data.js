@@ -188,7 +188,7 @@ export const vi = {
 
 export const en = {
     header: {
-        cskh: ' Support call center'
+        cskh: ' Call center'
     },
 
     info: {

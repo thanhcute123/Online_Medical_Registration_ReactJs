@@ -32,8 +32,8 @@ const FormMain = () => {
 
     const context = useContext(Page);
     return (
-        <div>
-            <div className="row">
+        // <div>
+            <div>
                 <div className="main d-flex justify-content-center align-items-center col-sm-7 mt-0 ml-auto mr-auto ">
                     <div className="d-flex justify-content-center align-items-center flex-column w-100 h-100">
                         <HeaderForm/>
@@ -48,7 +48,7 @@ const FormMain = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        // </div>
     )
 }
 export default FormMain;

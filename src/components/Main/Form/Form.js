@@ -148,14 +148,14 @@ const Form = ({formData, setFormData}) => {
             <div className="d-flex justify-content-center mt-3 w-100">
                 <div className="w-95 bg_color_1">
                     <p className="font_announce m-2 text-success p-1">{type.form.warning_left} <span
-                        className="text-danger">{type.form.star}</span>{type.form.warning_right}</p>
+                        className="text-danger"> * </span>{type.form.warning_right}</p>
                 </div>
             </div>
             <div className="d-flex justify-content-center align-items-center mt-3">
                 <p className="font_title">{type.form.form_1.form_title}</p>
             </div>
             <div className="w-100 mt-none">
-                <p className="ml-3 text-14">{type.form.form_1.service}<span className="text-danger">{type.form.star}</span></p>
+                <p className="ml-3 text-14">{type.form.form_1.service}<span className="text-danger"> * </span></p>
                 <div className="d-flex justify-content-center align-items-center w-100">
                     <div className="w-95 row">
                         <input type="button" value={type.form.form_1.paid_service} onClick={(e) => {
@@ -177,7 +177,7 @@ const Form = ({formData, setFormData}) => {
             <div className="row sub_form mt-2">
                 <div className="col-sm-12 col-lg-6 col-md-12">
                     <div className="w-95 ml-3">
-                        <p className="text-14">{type.form.form_1.examination_service}<span className="text-danger">{type.form.star}</span></p>
+                        <p className="text-14">{type.form.form_1.examination_service}<span className="text-danger">*</span></p>
                         {
                             formData.service === 0 ? <FormSelect formData={formData} setFormData={setFormData}/> :
                                 <FormSelectFree formData={formData} setFormData={setFormData}/>
@@ -186,7 +186,7 @@ const Form = ({formData, setFormData}) => {
                 </div>
                 <div className="col-sm-12 col-lg-6 col-md-12">
                     <div className="w-95">
-                        <p className="margin text-14">{type.form.form_1.examination_date}<span className="text-danger">{type.form.star}</span></p>
+                        <p className="margin text-14">{type.form.form_1.examination_date}<span className="text-danger">*</span></p>
                         <div className="d-flex justify-content-center align-items-center w-100 margin">
                             <form className="w-100">
                                 <div className="form-group">
@@ -253,7 +253,7 @@ const Form = ({formData, setFormData}) => {
                 </div>
                 <div className="col-sm-12 col-lg-6 col-md-12">
                     <div className="w-95">
-                        <p className="margin text-14">{type.form.form_1.id_person}<span className="text-danger">*</span></p>
+                        <p className="margin text-14">{type.form.form_1.id_person}<span className="text-danger"> * </span></p>
                         <div className="d-flex justify-content-center align-items-center w-100 margin">
                             <form className="w-100">
                                 <div className="form-group">
