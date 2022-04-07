@@ -4,7 +4,6 @@ import FormSelect from "./FormSelect/FormSelect";
 import FormSelectFree from "./FormSelectFree/FormSelectFree";
 import {Page} from "../../Store/ClickContext";
 import {date, timeRow2, vi, en, time } from "../../Data/Data";
-// import {time} from "../../Data/Data";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../../App.css';
 
@@ -18,7 +17,6 @@ const Form = ({formData, setFormData}) => {
     const [idError, setIdError] = useState('');
     const [symptomError, setSymptomError] = useState('');
     const [dateError, setDateError] = useState('');
-    // const [selectOptionError, setSelectOptionError] = useState('');
     const classActive = 'col-sm-12 col-lg-6 col-md-12 bg-color-active bt p-2 text-button text-white';
     const classNonActive = 'col-sm-12 col-lg-6 col-md-12 bt bg-color p-2 text-button';
     const classButtonActive = 'col-lg-2 col-md-4 col-sm-3 rounded bt bg-color-active text-white text-button p-2 ml-2';

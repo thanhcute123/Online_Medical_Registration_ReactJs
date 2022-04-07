@@ -70,7 +70,7 @@ const ConfirmRegisInfor = ({formData, setFormData}) => {
                     </div>
                     <div className="w-100">
                         <p className="ml-3">{type.form.form_1.examination_time}: <span
-                            className="text-color text-button">{formData.validInputTime}</span></p>
+                            className="text-color text-button">{formData.validInputTime.map(item => (<li>{item}</li>))}</span></p>
                     </div>
                     <div className="w-100">
                         <p className="ml-3">{type.form.form_1.id_person}: <span

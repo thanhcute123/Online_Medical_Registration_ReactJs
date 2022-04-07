@@ -13,8 +13,8 @@ const Header = () => {
     const context = useContext(Page);
     let type;
     context.translate === 0 ? type = vi : type = en;
-    const classNonActiveLanguage = "mr-1 border border-light";
-    const classActiveLanguage = "mr-1";
+    const classNonActiveLanguage = "mr-1 border border-light cursor";
+    const classActiveLanguage = "mr-1 cursor";
     const vi_translate = () => {
         context.vi_page();
     }

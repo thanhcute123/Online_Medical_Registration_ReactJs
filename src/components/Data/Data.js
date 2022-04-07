@@ -1,49 +1,4 @@
-// export const service = [
-//     {
-//         id: 1,
-//         name: 'Sản phụ - khoa',
-//         type: [
-//             'Không yêu cầu bác sĩ chỉ định - ₫200,000',
-//
-//             'BSCKII Nguyễn Tuấn anh - ₫200,000'
-//
-//         ]
-//     },
-//     {
-//         id: 2,
-//         name: 'Khám nội',
-//         type: [
-//
-//             'Không yêu cầu bác sĩ chỉ định - ₫200,000',
-//
-//             'BSCKII Nguyễn Thế Sơn - ₫200,000'
-//
-//         ]
-//     },
-//     {
-//         id: 3,
-//         name: 'Khoa nhi',
-//         type: [
-//             'Không yêu cầu bác sĩ chỉ định - ₫200,000',
-//
-//             'BSCKII Nguyễn Xuân giao - ₫200,0000'
-//
-//         ]
-//     }
-//
-// ];
-//
-// export const serviceFree = [
-//     {
-//         id: 1,
-//         name: 'Tư vấn sức khỏe',
-//         type: [
-//             'Không yêu cầu bác sĩ chỉ định',
-//             'Bác sỹ Trần Lê Sơn',
-//             'Bác sỹ Nguyễn Phương Thảo'
-//         ]
-//     }
-// ];
+
 export const date = [
     {
         id: 1,
@@ -72,57 +27,14 @@ export const timeRow2 = [
     '16h-17h'
 ];
 
-// export const bankInfor = [
-//     {
-//         id: 1,
-//         number: 'Tài khoản 1:',
-//         accountNumber: ' 12910000153585',
-//         label: 'Chủ tài khoản:',
-//         name: ' Công ty TNHH tổ hợp y tế Phương Đông',
-//         labelBank: 'Ngân hàng:',
-//         nameBank: ' Ngân hàng BIDV. Chi nhánh Hoàng Mai Hà Nội'
-//     },
-//
-//     {
-//         id: 2,
-//         number: 'Tài khoản 2:',
-//         accountNumber: ' 0491000268686',
-//         label: 'Chủ tài khoản:',
-//         name: ' Công ty TNHH tổ hợp y tế Phương Đông',
-//         labelBank: 'Ngân hàng:',
-//         nameBank: ' Ngân hàng Vietcom bank'
-//     },
-//
-//     {
-//         id: 3,
-//         number: 'Tài khoản 3:',
-//         accountNumber: ' 1507201062383',
-//         label: 'Chủ tài khoản:',
-//         name: ' Công ty TNHH tổ hợp y tế Phương Đông',
-//         labelBank: 'Ngân hàng:',
-//         nameBank: ' Ngân hàng Agribank CN Cầu Giấy'
-//     },
-//     {
-//         id: 4,
-//         number: 'Tài khoản 4:',
-//         accountNumber: ' 1903625172012',
-//         label: 'Chủ tài khoản:',
-//         name: ' Công ty TNHH tổ hợp y tế Phương Đông',
-//         labelBank: 'Ngân hàng:',
-//         nameBank: ' Ngân hàng Techcombank'
-//     }
-//
-//
-// ];
-
 export const vi = {
     header: {
         cskh: ' Tổng đài hỗ trợ'
     },
 
     info: {
-            title: 'Đăng ký khám chữa bệnh trực tuyến',
-            sub_title: 'Bệnh nhân được thăm khám trực tuyến với đội ngũ bác sĩ chuyên khoa giỏi đang làm việc tại các bệnh viện lớn'
+        title: 'Đăng ký khám chữa bệnh trực tuyến',
+        sub_title: 'Bệnh nhân được thăm khám trực tuyến với đội ngũ bác sĩ chuyên khoa giỏi đang làm việc tại các bệnh viện lớn'
     },
 
     form: {
@@ -189,20 +101,6 @@ export const vi = {
             ],
             examination_date: 'Ngày đăng ký khám ',
             examination_time: 'Thời gian đăng ký khám ',
-            time: [
-                '7h-8h',
-                '8h-9h',
-                '9h-10h',
-                '10h-11h',
-                '11h-12h'
-            ],
-            timeRow2: [
-                '12h-13h',
-                '13h-14h',
-                '14h-15h',
-                '15h-16h',
-                '16h-17h'
-            ],
             id_person: 'Nhập mã số bệnh nhân',
             description: 'Mô tả',
             button_attach_documents: 'Đính kèm tài liệu',
@@ -362,20 +260,6 @@ export const en = {
             ],
             examination_date: 'Date of registration ',
             examination_time: 'Time of registration ',
-            time: [
-                '7h-8h',
-                '8h-9h',
-                '9h-10h',
-                '10h-11h',
-                '11h-12h'
-            ],
-            timeRow2: [
-                '12h-13h',
-                '13h-14h',
-                '14h-15h',
-                '15h-16h',
-                '16h-17h'
-            ],
             id_person: 'Enter patient code',
             description: 'Description',
             button_attach_documents: 'Attach documents',
